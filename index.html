@@ -1,225 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>INFOGRAPHICS</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      background-color: #f9fafb;
-      font-family: 'Poppins', sans-serif;
-      color: #374151;
-    }
-    .step-card {
-      background-color: #ffffff;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-      padding: 1.5rem;
-      border: 1px solid #e5e7eb;
-    }
-    .step-card:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-      transform: translateY(-4px);
-      border-color: #2563eb;
-    }
-    .step-number {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #2563eb;
-      background-color: #e0e7ff;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <style>
+
+        body{
+            background-color: #ddd;
+            font-family: 'Poppins', sans-serif;
+        }
+       .section-padding {
+            padding: 80px 0;
+        }
+        .news-card {
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .infographic-item {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+        }
+        .number-circle {
+            width: 60px;
+            height: 60px;
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .scenario-box {
+            background-color: #f8f9fa;
+            border-left: 5px solid #dc3545;
+            padding: 25px;
+            border-radius: 5px;
+        }
+
+
+        .navbar {
+      background: url('https://t4.ftcdn.net/jpg/06/22/33/51/360_F_622335155_t1SnyWoAkoi9C8zlId5tzufGFcmnWe6q.jpg') no-repeat center center;
+      background-size: cover;
       display: flex;
-      align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15);
-      transition: background-color 0.3s ease, color 0.3s ease;
+      align-items: center;
+      text-align: center;
     }
-    .step-card:hover .step-number {
-      background-color: #2563eb;
+    .navbar-overlay {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       color: white;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+      padding: 30px;
     }
-    h1 {
-      font-weight: 800;
-      font-size: 2.5rem;
-      color: #2563eb;
-      line-height: 1.3;
+
+
+    .responsibility-box {
+      background-color: #f8f9fa;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    h2 {
-      font-weight: 600;
-      font-size: 1.25rem;
-      color: #1e3a8a;
+    .responsibility-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-    a {
-      color: #2563eb;
-      font-weight: 600;
-      text-decoration: underline;
+    .responsibility-icon {
+      font-size: 40px;
+      color: #25d7eb;
+      margin-bottom: 15px;
     }
-    a:hover {
-      color: #1e40af;
-      text-decoration: none;
+
+
+    .case-card {
+      border: 1px solid #ddd;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: #fff;
     }
-    h2:hover {
-      color: #55DDFF;
-      text-decoration: none;
+    .case-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-    header p {
-      font-weight: 600;
-      color: #374151;
-      max-width: 720px;
-      margin: 0 auto;
+    .case-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
-  </style>
+    .case-title {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .case-body {
+      padding: 15px;
+    }
+
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #121e2f;
+      margin-bottom: 40px;
+    }
+    .whatif-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .whatif-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    .whatif-questions li {
+      margin-bottom: 12px;
+    }
+    .infographic-item h5 {
+    color: #007bff;    
+    font-weight: 700;  
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+.infographic-item:hover h5{
+  color: #25D7EB;
+}
+
+.infographic-item p {
+    color: #6c757d;   
+    font-weight: 500; 
+    margin: 0;
+}
+.infographic-item:hover p{
+  color: black;
+}
+    .number-circle{
+        width: 60px;
+    height: 60px;
+    background-color: #E0E7FF;
+    color: #0d6efd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    }
+    .infographic-item{
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        transition: all 0.3s;
+    }
+    .infographic-item:hover{
+        transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+
+ </style>
 </head>
 <body>
-  <main class="container py-5">
-    <!-- Header -->
-    <header class="mb-5">
-      <div class="d-flex align-items-center">
-        <!-- Logo -->
-        <div class="me-3">
-          <img src="logo.png" alt="Cyber Security Logo" 
-               class="img-fluid" style="max-width: 140px; height: auto;">
-        </div>
-        <!-- Title + Subtitle centered -->
-        <div class="flex-grow-1 text-center">
-          <h1 class="mb-3">
-            The Filipino’s Guide to Data Breach <br> Survival
-          </h1>
-          <p>
-            Follow these clear steps if you suspect your personal data has been compromised. 
-            Protect yourself, secure your accounts, and report breaches properly.
-          </p>
+
+
+  <nav class="navbar">
+    <div class="navbar-overlay">
+      <h1 class="display-5 fw-bold">The Filipino’s Guide to Data Breach Survival</h1>
+      <p class="fs-5">Data Privacy & Cybersecurity in a Digital Society</p>
+    </div>
+  </nav>
+ 
+  <section id="overview" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-5 fw-bold">Current State of Cybersecurity in the Philippines</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card news-card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="bi bi-exclamation-triangle text-warning me-2"></i>Challenges</h4>
+                            <p class="card-text">
+                                The Philippines faces growing cybersecurity challenges with increasing digital adoption.
+                                Common issues include phishing attacks, ransomware, and data breaches affecting both
+                                government and private institutions.
+                            </p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Rising incidents of identity theft</li>
+                                <li class="list-group-item">Limited cybersecurity awareness among general public</li>
+                                <li class="list-group-item">Insufficient cybersecurity professionals</li>
+                                <li class="list-group-item">Growing sophistication of cybercriminals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card news-card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="bi bi-shield-check text-success me-2"></i>Progress & Initiatives</h4>
+                            <p class="card-text">
+                                The Philippine government has taken steps to improve cybersecurity through legislation
+                                and capacity building, but implementation remains a challenge.
+                            </p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Data Privacy Act of 2012 implementation</li>
+                                <li class="list-group-item">National Cybersecurity Plan 2022</li>
+                                <li class="list-group-item">Increased collaboration with international partners</li>
+                                <li class="list-group-item">Growing cybersecurity education programs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ethical responsibilities -->
+            <div class="container py-5">
+  <div class="row mb-5">
+    <div class="col-lg-8 mx-auto text-center">
+      <h2 class="fw-bold">Ethical Responsibilities of IT Professionals</h2>
+      <p class="text-muted fs-5">Protecting user data and maintaining public trust in the digital age</p>
+    </div>
+  </div>
+
+
+  <!-- Responsibility Boxes -->
+  <div class="row g-4 text-center fw-bold">
+    <div class="col-md-4">
+      <div class="responsibility-box">
+        <i class="bi bi-shield-lock responsibility-icon"></i>
+        <h5>Keep Data Safe</h5>
+        <p>Protect user data from leaks, hacks, and misuse.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="responsibility-box">
+        <i class="bi bi-journal-check responsibility-icon"></i>
+        <h5>Follow Laws</h5>
+        <p>Comply with data privacy and cybersecurity regulations.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="responsibility-box">
+        <i class="bi bi-flag responsibility-icon"></i>
+        <h5>Report Issues</h5>
+        <p>Disclose breaches and vulnerabilities responsibly.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="responsibility-box">
+        <i class="bi bi-people responsibility-icon"></i>
+        <h5>Educate Users</h5>
+        <p>Guide users to stay safe online and protect data.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="responsibility-box">
+        <i class="bi bi-arrow-repeat responsibility-icon"></i>
+        <h5>Update Systems</h5>
+        <p>Keep software, networks, and defenses up to date.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="responsibility-box">
+        <i class="bi bi-person-check responsibility-icon"></i>
+        <h5>Be Responsible</h5>
+        <p>Act ethically and put public trust first in IT work.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container py-5">
+  <!-- Section Title -->
+  <div class="row mb-5">
+    <div class="col-lg-8 mx-auto text-center">
+      <h2 class="fw-bold">Case Studies</h2>
+      <p class="text-muted fs-5">Recent news headlines highlighting the importance of data protection</p>
+    </div>
+  </div>
+
+
+  <!-- Case Study Cards -->
+  <div class="row g-4">
+    <!-- PhilHealth Card -->
+    <div class="col-md-6">
+      <div class="case-card h-100">
+        <div class="case-title">PhilHealth Ransomware Attack (2023)</div>
+        <img src="https://s1.dmcdn.net/v/VGg7y1b3QgD1iWxhs/x1080" alt="PhilHealth Ransomware Attack">
+        <div class="case-body">
+          <ul>
+            <li>Hackers locked systems and demanded ransom.</li>
+            <li>Millions of members’ data exposed.</li>
+            <li>Government services disrupted for weeks.</li>
+            <li>Exposed weak cybersecurity readiness.</li>
+          </ul>
         </div>
       </div>
-    </header>
-
-    <!-- Steps Grid -->
-    <div class="row row-cols-1 row-cols-md-2 g-4 align-items-stretch">
-      <!-- Step 1 -->
-      <section class="col">
-        <div class="step-card d-flex align-items-start h-100">
-          <div class="step-number me-4">1</div>
-          <div>
-            <h2>Confirm the Breach</h2>
-            <p class="mt-2">Check official notifications or alerts from your bank, service providers, or government agencies. Avoid clicking suspicious links in emails or messages.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 2 -->
-      <section class="col">
-        <div class="step-card d-flex align-items-start h-100">
-          <div class="step-number me-4">2</div>
-          <div>
-            <h2>Change Your Passwords Immediately</h2>
-            <p class="mt-2">Update passwords on affected accounts and any other accounts using the same password. Use strong, unique passwords or a password manager.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 3 -->
-      <section class="col">
-        <div class="step-card d-flex align-items-start h-100">
-          <div class="step-number me-4">3</div>
-          <div>
-            <h2>Enable Two-Factor Authentication (2FA)</h2>
-            <p class="mt-2">Add an extra layer of security to your accounts by enabling 2FA using authenticator apps or SMS codes.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 4 -->
-      <section class="col">
-        <div class="step-card d-flex align-items-start h-100">
-          <div class="step-number me-4">4</div>
-          <div>
-            <h2>Monitor Your Financial Statements</h2>
-            <p class="mt-2">Regularly check your bank and credit card statements for unauthorized transactions. Report suspicious activity immediately.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 5 -->
-      <section class="col">
-        <div class="step-card d-flex align-items-start h-100">
-          <div class="step-number me-4">5</div>
-          <div>
-            <h2>Report the Breach to the National Privacy Commission (NPC)</h2>
-            <p class="mt-2">File a report at the NPC website (<a href="https://privacy.gov.ph" target="_blank">privacy.gov.ph</a>) or call their hotline at 8925-0210.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 6 -->
-      <section class="col">
-        <div class="step-card d-flex align-items-start h-100">
-          <div class="step-number me-4">6</div>
-          <div>
-            <h2>Beware of Phishing Attempts</h2>
-            <p class="mt-2">Watch out for emails or messages asking for personal info or login credentials. Verify sender details and never share sensitive data via email or phone.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 7 -->
-      <section class="col">
-        <div class="step-card d-flex align-items-start h-100">
-          <div class="step-number me-4">7</div>
-          <div>
-            <h2>Freeze Your Credit Report</h2>
-            <p class="mt-2">Contact credit bureaus to place a freeze or alert on your credit report to prevent identity theft or new accounts opened in your name.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 8 -->
-      <section class="col">
-        <div class="step-card d-flex align-items-start h-100">
-          <div class="step-number me-4">8</div>
-          <div>
-            <h2>Secure Your Devices</h2>
-            <p class="mt-2">Update your device software and antivirus programs. Avoid using public Wi-Fi for sensitive transactions and consider using a VPN.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 9 -->
-      <section class="col">
-        <div class="step-card d-flex align-items-start h-100">
-          <div class="step-number me-4">9</div>
-          <div>
-            <h2>Keep Records of Your Actions</h2>
-            <p class="mt-2">Document all communications and steps taken after the breach. This will help if you need to escalate or follow up with authorities.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 10 -->
-      <section class="col">
-        <div class="step-card d-flex align-items-start h-100">
-          <div class="step-number me-4">10</div>
-          <div>
-            <h2>Educate Yourself and Others</h2>
-            <p class="mt-2">Stay updated on cybersecurity best practices and share this knowledge with family and friends to help protect your community.</p>
-          </div>
-        </div>
-      </section>
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer class="mt-5 text-center text-secondary px-4 pb-5">
-    <p class="mb-2 fst-italic">“In the digital world, guarding your data is as vital as guarding your identity.”</p>
-  </footer>
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Jollibee Card -->
+    <div class="col-md-6">
+      <div class="case-card h-100">
+        <div class="case-title">Jollibee Data Breach (2024)</div>
+        <img src="https://insideretail.asia/wp-content/uploads/2024/06/Jollibee-data-breach-may-impact-almost-11-million-customers.png" alt="Jollibee Data Breach">
+        <div class="case-body">
+          <ul>
+            <li>Customer order and account data leaked online.</li>
+            <li>Raised concerns on corporate data protection.</li>
+            <li>Damaged customer trust and brand image.</li>
+            <li>Highlighted need for stronger IT safeguards.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container whatif-section">
+  <!-- Section Title Outside the Card -->
+  <div class="section-title">What If Scenario</div>
+
+
+  <div class="row align-items-center g-5">
+    <!-- Image on the left -->
+    <div class="col-md-5">
+      <img src="whatif-removebg-preview.png" alt="What If Scenario" class="whatif-img">
+    </div>
+
+
+    <!-- Card with Scenario and Questions -->
+    <div class="col-md-7">
+      <div class="whatif-card">
+        <p><strong>Scenario:</strong> "What if a major online payment platform in the Philippines was found to have a severe security vulnerability that exposed the financial data of millions of users, but the company’s management decided to not disclose it to the public for months?"</p>
+        <ul class="whatif-questions">
+          <li>How would this affect public trust in the company?</li>
+          <li>Was it ethical for management to hide the issue?</li>
+          <li>What could be the consequences for the users?</li>
+          <li>What should IT professionals have done in this case?</li>
+          <li>How can companies prevent this situation in the future?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Infographic Section -->
+<div class="container py-5">
+  <div class="row mb-5">
+    <div class="col-lg-10 mx-auto text-center">
+      <h2 class="fw-bold">The Filipino’s Guide to Data Breach Survival</h2>
+      <p class="text-muted fs-5">Follow these clear steps if you suspect your personal data has been compromised. Protect yourself, secure your accounts, and report breaches properly.</p>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <!-- Step 1 -->
+    <div class="col-md-6 d-flex">
+      <div class="infographic-item d-flex w-100 shadow-sm">
+        <div class="number-circle">1</div>
+        <div>
+          <h5>Confirm the Breach</h5>
+          <p>Check official notifications or alerts from your bank, service providers, or government agencies. Avoid clicking suspicious links in emails or messages.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="col-md-6 d-flex">
+      <div class="infographic-item d-flex w-100 shadow-sm">
+        <div class="number-circle">2</div>
+        <div>
+          <h5>Change Your Passwords Immediately</h5>
+          <p>Update passwords on affected accounts and any other accounts using the same password. Use strong, unique passwords or a password manager.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="col-md-6 d-flex">
+      <div class="infographic-item d-flex w-100 shadow-sm">
+        <div class="number-circle">3</div>
+        <div>
+          <h5>Enable Two-Factor Authentication (2FA)</h5>
+          <p>Add an extra layer of security to your accounts by enabling 2FA using authenticator apps or SMS codes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="col-md-6 d-flex">
+      <div class="infographic-item d-flex w-100 shadow-sm">
+        <div class="number-circle">4</div>
+        <div>
+          <h5>Monitor Your Financial Statements</h5>
+          <p>Regularly check your bank and credit card statements for unauthorized transactions. Report suspicious activity immediately.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="col-md-6 d-flex">
+      <div class="infographic-item d-flex w-100 shadow-sm">
+        <div class="number-circle">5</div>
+        <div>
+          <h5>Report the Breach to the National Privacy Commission (NPC)</h5>
+          <p>File a report at the NPC website (<a href="https://privacy.gov.ph" target="_blank">privacy.gov.ph</a>) or call their hotline at 8825-0210.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="col-md-6 d-flex">
+      <div class="infographic-item d-flex w-100 shadow-sm">
+        <div class="number-circle">6</div>
+        <div>
+          <h5>Beware of Phishing Attempts</h5>
+          <p>Watch out for emails or messages asking for personal info or login credentials. Verify sender details and never share sensitive data via email or phone.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="col-md-6 d-flex">
+      <div class="infographic-item d-flex w-100 shadow-sm">
+        <div class="number-circle">7</div>
+        <div>
+          <h5>Freeze Your Credit Report</h5>
+          <p>Contact credit bureaus to place a freeze or alert on your credit report to prevent identity theft or new accounts opened in your name.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 8 -->
+    <div class="col-md-6 d-flex">
+      <div class="infographic-item d-flex w-100 shadow-sm">
+        <div class="number-circle">8</div>
+        <div>
+          <h5>Secure Your Devices</h5>
+          <p>Update your device software and antivirus programs. Avoid using public Wi-Fi for sensitive transactions and consider using a VPN.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 9 -->
+    <div class="col-md-6 d-flex">
+      <div class="infographic-item d-flex w-100 shadow-sm">
+        <div class="number-circle">9</div>
+        <div>
+          <h5>Keep Records of Your Actions</h5>
+          <p>Document all communications and steps taken after the breach. This will help if you need to escalate or follow up with authorities.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 10 -->
+    <div class="col-md-6 d-flex">
+      <div class="infographic-item d-flex w-100 shadow-sm">
+        <div class="number-circle">10</div>
+        <div>
+          <h5>Educate Yourself and Others</h5>
+          <p>Stay updated on cybersecurity best practices and share this knowledge with family and friends to help protect your community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 </html>
